@@ -45,6 +45,31 @@ def calc_iceberg_size(iceberg_in1):
         if 'sail' not in iceberg_in1:  iceberg_in1['sails'] = height*(1-rho_i/rho_w) 
     return iceberg_in1
 
+# CHECKS
+def check_simulation_results(oi_in, dict_in_in):
+    '''
+    Checks if icebrg seeding, model configurations and variable reading worked correctly.
+    '''
+    print('Performing checks..')
+    #Checks model configurations
+    for c in dict_in_in['config']:
+        if 'seed' in c: test = abs(dict_in_in['config'][c]-oi_in[c.split(':')[1]][:,0].values[0])>0.01 #Some configurations can be accessed as dataset variables
+        else: test = str(dict_in_in['config'][c])==str(oi_in.attrs['config_'+c]) #Some configurations can be accessed as attributes
+        if test==True: print(c,' not defined corretly in the model: ',dict_in_in['config'][c],oi_in.attrs['config_'+c])
+    #Checks if iceberg(s) were seeded correctly
+    for s in dict_in_in['seed']:
+        if s not in ('number','time'): 
+            test = np.abs(dict_in_in['seed'][s]-oi_in[s][:,0].values[0])>0.01
+            if test==True: print(s,' not seeded correctly, difference: ',np.abs(dict_in_in['seed'][s]-oi_in[s][:,0].values[0]))
+    #Checks if input variables were read (if Readers worked)
+    v_l = ['x_sea_water_velocity',  'y_sea_water_velocity', 'x_wind', 'y_wind',  'sea_water_temperature', 'sea_water_salinity', #list of mmost important input variables
+           'sea_ice_area_fraction','sea_ice_thickness', 'sea_ice_x_velocity', 'sea_ice_y_velocity','sea_surface_wave_stokes_drift_x_velocity', 'sea_surface_wave_stokes_drift_y_velocity',] #'sea_surface_wave_significant_height', 'sea_surface_wave_from_direction',  
+    test=np.all(oi_in[v_l] == 0) #checks all variable arrays  at once
+    for v in v_l: 
+        if test[v]==True: print(v, 'NOT imported!') #print warning if variable all zero
+    logger.info('Checks done.')
+    return
+
 def simu_late(dict_in={'config':{},'input':['topaz4',],'seed':{},'more':{}}):
     '''
     Initialises, seedings and runs OpenBerg simulation.
@@ -56,11 +81,22 @@ def simu_late(dict_in={'config':{},'input':['topaz4',],'seed':{},'more':{}}):
     # LOAD PACKAGES
     from opendrift.models.openberg import OpenBerg
     from opendrift.readers.reader_netCDF_CF_generic import Reader    
+    import sys
     # DEFINITIONS
-    path_env = './input/'   #Directory for input read from local files
-    path_res = './results/' #Directory to save results in
+    path_env = '../input/'   #Directory for input read from local files
+    path_res = '../results/' #Directory to save results in
+    # LOGGING
+    logfile = False if 'logfile' not in dict_in['more'].keys() else dict_in['more']['logfile']
+    if logfile!=False: 
+        if 'loglevel' not in dict_in['more']: 
+            dict_in['more']['loglevel']=10 
+            if logfile in [10,20,50]: dict_in['more']['loglevel']=logfile
+#        log_file = open('%s/out.log'%(path_res), 'w')
+#        sys.stdout = log_file  # Redirects print() output
+#        sys.stderr = log_file  # Redirects error messages
     # INITIALISATION
-    o = OpenBerg(loglevel=50 if 'loglevel' not in dict_in['more'] else dict_in['more']['loglevel']) 
+    o = OpenBerg(loglevel=50 if 'loglevel' not in dict_in['more'] else dict_in['more']['loglevel'], logfile='run.log' if logfile!=False else '') 
+    logger = logging.getLogger('opendrift')
     # CONFIG
     for ck in dict_in['config'].keys(): o.set_config(ck,dict_in['config'][ck])
     #o.set_config(**dict_in['config'])
@@ -119,14 +155,25 @@ def simu_late(dict_in={'config':{},'input':['topaz4',],'seed':{},'more':{}}):
             
     #    if 'radius' in dict_in['seed']: iceberg['radius']=dict_in['seed']['radius']
     iceberg_in = dict_in.get('seed', {})
-    iceberg_in = calc_iceberg_size(iceberg_in)
+    iceberg_in = calc_iceberg_size(iceberg_in) #add missing iceberg sizes
     #if iceberg['length'].size>1: iceberg['number']= iceberg['length'].size
     o.seed_elements(**iceberg_in)
-    #correct iceberg size
+#    o.seed_elements(lon=lon_i[i], lat=lat_i[i], number=1, radius=1, time=time_i[i], 
+#                    length=o.get_configspec('seed:length')['seed:length']['value'],sail=o.get_configspec('seed:sail')['seed:sail']['value'],draft=o.get_configspec('seed:draft')['seed:draft']['value'],width=o.get_configspec('seed:width')['seed:width']['value'],
+#                    water_drag_coeff=o.get_configspec('seed:water_drag_coeff')['seed:water_drag_coeff']['value'],wind_drag_coeff=o.get_configspec('seed:wind_drag_coeff')['seed:wind_drag_coeff']['value'],)
         
     #RUN SIMULATIONS 
-    if 'duration' in dict_in['more']: simulation_days = dict_in['more']['duration'] # Simulation time in days. Negative sign causes backwards simulation.
-    oi = o.run(duration=timedelta(days=simulation_days))
+    if 'duration' in dict_in['more']: 
+        simulation_days = dict_in['more']['duration'] # Simulation time in days. Negative sign causes backwards simulation.
+        oi = o.run(duration=timedelta(days=simulation_days))
+    else: oi = o.run() 
+
+    # CHECK SEEDING, MODEL SETTINGS and INPUT:
+    check_simulation_results(oi, dict_in) #Prints if something is wrong
+    
+    # SAVE RESULTS
+    #try: log_file.close()
+    #except: pass
     
     print('\a')
     return o,oi

@@ -1,0 +1,782 @@
+09:11:58 DEBUG   opendrift.config:168: Adding 17 config items from __init__
+09:11:58 DEBUG   opendrift.config:178:   Overwriting config item readers:max_number_of_fails
+09:11:58 DEBUG   opendrift.config:168: Adding 14 config items from __init__
+09:11:58 INFO    opendrift:568: OpenDriftSimulation initialised (version 1.14.9)
+09:11:58 DEBUG   opendrift.config:168: Adding 15 config items from openberg
+09:11:58 INFO    opendrift:103: This will now appear in the logfile
+09:11:58 INFO    opendrift.models.basemodel.environment:203: Adding a global landmask from GSHHG
+09:11:58 DEBUG   opendrift.readers.basereader:188: Variable mapping: ['sea_floor_depth_below_sea_level'] -> ['land_binary_mask'] is not activated
+09:11:58 DEBUG   opendrift.models.basemodel.environment:313: Added reader global_landmask
+09:11:58 INFO    opendrift.models.basemodel.environment:227: Fallback values will be used for the following variables which have no readers: 
+09:11:58 INFO    opendrift.models.basemodel.environment:230: 	x_sea_water_velocity: 0.000000
+09:11:58 INFO    opendrift.models.basemodel.environment:230: 	y_sea_water_velocity: 0.000000
+09:11:58 INFO    opendrift.models.basemodel.environment:230: 	sea_floor_depth_below_sea_level: 10000.000000
+09:11:58 INFO    opendrift.models.basemodel.environment:230: 	sea_surface_height: 0.000000
+09:11:58 INFO    opendrift.models.basemodel.environment:230: 	sea_surface_x_slope: 0.000000
+09:11:58 INFO    opendrift.models.basemodel.environment:230: 	sea_surface_y_slope: 0.000000
+09:11:58 INFO    opendrift.models.basemodel.environment:230: 	x_wind: 0.000000
+09:11:58 INFO    opendrift.models.basemodel.environment:230: 	y_wind: 0.000000
+09:11:58 INFO    opendrift.models.basemodel.environment:230: 	horizontal_diffusivity: 0.000000
+09:11:58 INFO    opendrift.models.basemodel.environment:230: 	sea_surface_wave_significant_height: 0.000000
+09:11:58 INFO    opendrift.models.basemodel.environment:230: 	sea_surface_wave_from_direction: 0.000000
+09:11:58 INFO    opendrift.models.basemodel.environment:230: 	sea_surface_wave_stokes_drift_x_velocity: 0.000000
+09:11:58 INFO    opendrift.models.basemodel.environment:230: 	sea_surface_wave_stokes_drift_y_velocity: 0.000000
+09:11:58 INFO    opendrift.models.basemodel.environment:230: 	sea_water_temperature: 2.000000
+09:11:58 INFO    opendrift.models.basemodel.environment:230: 	sea_water_salinity: 35.000000
+09:11:58 INFO    opendrift.models.basemodel.environment:230: 	sea_ice_area_fraction: 0.000000
+09:11:58 INFO    opendrift.models.basemodel.environment:230: 	sea_ice_thickness: 0.000000
+09:11:58 INFO    opendrift.models.basemodel.environment:230: 	sea_ice_x_velocity: 0.000000
+09:11:58 INFO    opendrift.models.basemodel.environment:230: 	sea_ice_y_velocity: 0.000000
+09:11:58 DEBUG   opendrift:164: Changed mode from Mode.Config to Mode.Ready
+09:11:58 DEBUG   opendrift:164: Changed mode from Mode.Ready to Mode.Run
+09:11:58 DEBUG   opendrift:1800: 
+------------------------------------------------------
+Software and hardware:
+  OpenDrift version 1.14.9
+  Platform: Linux, 5.17.4-200.fc35.x86_64
+  31.349506378173828 GB memory
+  8 processors (x86_64)
+  NumPy version 2.4.4
+  SciPy version 1.17.1
+  Matplotlib version 3.10.8
+  NetCDF4 version 1.7.4
+  Xarray version 2026.4.0
+  ADIOS (adios_db) version 1.2.7
+  Copernicusmarine version 2.4.0
+  Python version 3.12.11 | packaged by conda-forge | (main, Jun  4 2025, 14:45:31) [GCC 13.3.0]
+------------------------------------------------------
+
+09:11:58 DEBUG   opendrift:1813: No output file is specified, neglecting export_buffer_length
+09:11:58 INFO    opendrift:1839: Storing previous values of element property lon because of condition (('general:coastline_action', 'in', ['stranding', 'previous']), 'or', ('general:seafloor_action', 'in', ['previous']))
+09:11:58 INFO    opendrift:1839: Storing previous values of element property lat because of condition (('general:coastline_action', 'in', ['stranding', 'previous']), 'or', ('general:seafloor_action', 'in', ['previous']))
+09:11:58 DEBUG   opendrift:1962: Finalizing environment and preparing readers for simulation coverage ([35.44141534 80.19020992 40.19688269 80.9685883 ]) and time (2023-09-10 12:36:00 to 2023-09-11 00:36:00)
+09:11:58 DEBUG   opendrift.models.basemodel.environment:166: 	Preparing global_landmask for extent [35.44141534 80.19020992 40.19688269 80.9685883 ]
+09:11:58 DEBUG   opendrift.readers.basereader.variables:555: Nothing more to prepare for global_landmask
+09:11:58 DEBUG   opendrift:2059: Initial self.result, size Frozen({'trajectory': 1, 'time': 13})
+09:11:58 INFO    opendrift:947: Using existing reader for land_binary_mask to move elements to ocean
+09:11:58 DEBUG   opendrift.models.basemodel.environment:599: ----------------------------------------
+09:11:58 DEBUG   opendrift.models.basemodel.environment:600: Variable group ['land_binary_mask']
+09:11:58 DEBUG   opendrift.models.basemodel.environment:601: ----------------------------------------
+09:11:58 DEBUG   opendrift.models.basemodel.environment:605: Calling reader global_landmask
+09:11:58 DEBUG   opendrift.models.basemodel.environment:606: ----------------------------------------
+09:11:58 DEBUG   opendrift.models.basemodel.environment:626: Data needed for 1 elements
+09:11:58 DEBUG   opendrift.readers.basereader.variables:761: Fetching variables from global_landmask covering 1 elements
+09:11:58 DEBUG   opendrift.readers.basereader.continuous:37: Fetched env-before
+09:11:58 DEBUG   opendrift.readers.basereader.variables:639: Checking land_binary_mask for invalid values
+09:11:58 DEBUG   opendrift.readers.basereader.variables:797: Reader projection is latlon - rotation of vectors is not needed.
+09:11:58 DEBUG   opendrift.models.basemodel.environment:762: Obtained data for all elements.
+09:11:58 DEBUG   opendrift.models.basemodel.environment:775: ---------------------------------------
+09:11:58 DEBUG   opendrift.models.basemodel.environment:776: Finished processing all variable groups
+09:11:58 DEBUG   opendrift.models.basemodel.environment:898: ------------ SUMMARY -------------
+09:11:58 DEBUG   opendrift.models.basemodel.environment:900:     land_binary_mask: 0 (min) 0 (max)
+09:11:58 DEBUG   opendrift.models.basemodel.environment:902: ---------------------------------
+09:11:58 INFO    opendrift:978: All points are in ocean
+09:11:58 DEBUG   opendrift:904: to be seeded: 1, already seeded 0
+09:11:58 DEBUG   opendrift:926: Released 1 new elements.
+09:11:58 DEBUG   opendrift:2135: ======================================================================
+09:11:58 INFO    opendrift:2136: 2023-09-10 12:36:00 - step 1 of 12 - 1 active elements (0 deactivated)
+09:11:58 DEBUG   opendrift:2142: 0 elements scheduled.
+09:11:58 DEBUG   opendrift:2144: ======================================================================
+09:11:58 DEBUG   opendrift:2153: 		latitude = 80.57939910888672
+09:11:58 DEBUG   opendrift:2153: 		longitude = 37.819149017333984
+09:11:58 DEBUG   opendrift:2153: 		z = 0.0
+09:11:58 DEBUG   opendrift:2156: ---------------------------------
+09:11:58 DEBUG   opendrift.models.basemodel.environment:599: ----------------------------------------
+09:11:58 DEBUG   opendrift.models.basemodel.environment:600: Variable group ['land_binary_mask']
+09:11:58 DEBUG   opendrift.models.basemodel.environment:601: ----------------------------------------
+09:11:58 DEBUG   opendrift.models.basemodel.environment:605: Calling reader global_landmask
+09:11:58 DEBUG   opendrift.models.basemodel.environment:606: ----------------------------------------
+09:11:58 DEBUG   opendrift.models.basemodel.environment:626: Data needed for 1 elements
+09:11:58 DEBUG   opendrift.readers.basereader.variables:761: Fetching variables from global_landmask covering 1 elements
+09:11:58 DEBUG   opendrift.readers.basereader.continuous:37: Fetched env-before
+09:11:58 DEBUG   opendrift.readers.basereader.variables:639: Checking land_binary_mask for invalid values
+09:11:58 DEBUG   opendrift.readers.basereader.variables:797: Reader projection is latlon - rotation of vectors is not needed.
+09:11:58 DEBUG   opendrift.models.basemodel.environment:762: Obtained data for all elements.
+09:11:58 DEBUG   opendrift.models.basemodel.environment:775: ---------------------------------------
+09:11:58 DEBUG   opendrift.models.basemodel.environment:776: Finished processing all variable groups
+09:11:58 DEBUG   opendrift.models.basemodel.environment:796: Creating empty dictionary for profiles not profided by any reader: ['x_sea_water_velocity', 'y_sea_water_velocity', 'sea_water_temperature', 'sea_water_salinity']
+09:11:58 DEBUG   opendrift.models.basemodel.environment:801:       Using fallback value 0 for x_sea_water_velocity for all profiles
+09:11:58 DEBUG   opendrift.models.basemodel.environment:801:       Using fallback value 0 for y_sea_water_velocity for all profiles
+09:11:58 DEBUG   opendrift.models.basemodel.environment:801:       Using fallback value 2 for sea_water_temperature for all profiles
+09:11:58 DEBUG   opendrift.models.basemodel.environment:801:       Using fallback value 35 for sea_water_salinity for all profiles
+09:11:58 DEBUG   opendrift.models.basemodel.environment:898: ------------ SUMMARY -------------
+09:11:58 DEBUG   opendrift.models.basemodel.environment:900:     x_sea_water_velocity: 0 (min) 0 (max)
+09:11:58 DEBUG   opendrift.models.basemodel.environment:900:     y_sea_water_velocity: 0 (min) 0 (max)
+09:11:58 DEBUG   opendrift.models.basemodel.environment:900:     sea_floor_depth_below_sea_level: 10000 (min) 10000 (max)
+09:11:58 DEBUG   opendrift.models.basemodel.environment:900:     sea_surface_height: 0 (min) 0 (max)
+09:11:58 DEBUG   opendrift.models.basemodel.environment:900:     sea_surface_x_slope: 0 (min) 0 (max)
+09:11:58 DEBUG   opendrift.models.basemodel.environment:900:     sea_surface_y_slope: 0 (min) 0 (max)
+09:11:58 DEBUG   opendrift.models.basemodel.environment:900:     x_wind: 0 (min) 0 (max)
+09:11:58 DEBUG   opendrift.models.basemodel.environment:900:     y_wind: 0 (min) 0 (max)
+09:11:58 DEBUG   opendrift.models.basemodel.environment:900:     horizontal_diffusivity: 0 (min) 0 (max)
+09:11:58 DEBUG   opendrift.models.basemodel.environment:900:     sea_surface_wave_significant_height: 0 (min) 0 (max)
+09:11:58 DEBUG   opendrift.models.basemodel.environment:900:     sea_surface_wave_from_direction: 0 (min) 0 (max)
+09:11:58 DEBUG   opendrift.models.basemodel.environment:900:     sea_surface_wave_stokes_drift_x_velocity: 0 (min) 0 (max)
+09:11:58 DEBUG   opendrift.models.basemodel.environment:900:     sea_surface_wave_stokes_drift_y_velocity: 0 (min) 0 (max)
+09:11:58 DEBUG   opendrift.models.basemodel.environment:900:     sea_water_temperature: 2 (min) 2 (max)
+09:11:58 DEBUG   opendrift.models.basemodel.environment:900:     sea_water_salinity: 35 (min) 35 (max)
+09:11:58 DEBUG   opendrift.models.basemodel.environment:900:     sea_ice_area_fraction: 0 (min) 0 (max)
+09:11:58 DEBUG   opendrift.models.basemodel.environment:900:     sea_ice_thickness: 0 (min) 0 (max)
+09:11:58 DEBUG   opendrift.models.basemodel.environment:900:     sea_ice_x_velocity: 0 (min) 0 (max)
+09:11:58 DEBUG   opendrift.models.basemodel.environment:900:     sea_ice_y_velocity: 0 (min) 0 (max)
+09:11:58 DEBUG   opendrift.models.basemodel.environment:900:     land_binary_mask: 0 (min) 0 (max)
+09:11:58 DEBUG   opendrift.models.basemodel.environment:902: ---------------------------------
+09:11:58 DEBUG   opendrift.models.physics_methods:823: Calculating Hs from wind, min: 0.000000, mean: 0.000000, max: 0.000000
+09:11:58 WARNING opendrift.models.physics_methods:832: Setting wave direction equal to wind direction, min: 0.000000, mean: 0.000000, max: 0.000000
+09:11:58 DEBUG   opendrift:689: No elements hit coastline.
+09:11:58 DEBUG   opendrift:1732: No elements to deactivate
+09:11:58 DEBUG   opendrift:2193: Calling OpenBerg.update()
+09:11:58 DEBUG   opendrift.models.openberg:507: Advection with surface currents
+09:11:58 DEBUG   opendrift.models.openberg:573: No grounded icebergs detected in this timestep
+09:11:58 DEBUG   opendrift:1680: Horizontal diffusivity is 0, no random walk.
+09:11:58 DEBUG   opendrift:904: to be seeded: 0, already seeded 1
+09:11:58 DEBUG   opendrift:2135: ======================================================================
+09:11:58 INFO    opendrift:2136: 2023-09-10 13:36:00 - step 2 of 12 - 1 active elements (0 deactivated)
+09:11:58 DEBUG   opendrift:2142: 0 elements scheduled.
+09:11:58 DEBUG   opendrift:2144: ======================================================================
+09:11:58 DEBUG   opendrift:2153: 		latitude = 80.57939910888672
+09:11:58 DEBUG   opendrift:2153: 		longitude = 37.819149017333984
+09:11:58 DEBUG   opendrift:2153: 		z = 0.0
+09:11:58 DEBUG   opendrift:2156: ---------------------------------
+09:11:58 DEBUG   opendrift.models.basemodel.environment:599: ----------------------------------------
+09:11:58 DEBUG   opendrift.models.basemodel.environment:600: Variable group ['land_binary_mask']
+09:11:58 DEBUG   opendrift.models.basemodel.environment:601: ----------------------------------------
+09:11:58 DEBUG   opendrift.models.basemodel.environment:605: Calling reader global_landmask
+09:11:58 DEBUG   opendrift.models.basemodel.environment:606: ----------------------------------------
+09:11:58 DEBUG   opendrift.models.basemodel.environment:626: Data needed for 1 elements
+09:11:58 DEBUG   opendrift.readers.basereader.variables:761: Fetching variables from global_landmask covering 1 elements
+09:11:58 DEBUG   opendrift.readers.basereader.continuous:37: Fetched env-before
+09:11:58 DEBUG   opendrift.readers.basereader.variables:639: Checking land_binary_mask for invalid values
+09:11:58 DEBUG   opendrift.readers.basereader.variables:797: Reader projection is latlon - rotation of vectors is not needed.
+09:11:58 DEBUG   opendrift.models.basemodel.environment:762: Obtained data for all elements.
+09:11:58 DEBUG   opendrift.models.basemodel.environment:775: ---------------------------------------
+09:11:58 DEBUG   opendrift.models.basemodel.environment:776: Finished processing all variable groups
+09:11:58 DEBUG   opendrift.models.basemodel.environment:796: Creating empty dictionary for profiles not profided by any reader: ['x_sea_water_velocity', 'y_sea_water_velocity', 'sea_water_temperature', 'sea_water_salinity']
+09:11:58 DEBUG   opendrift.models.basemodel.environment:801:       Using fallback value 0 for x_sea_water_velocity for all profiles
+09:11:58 DEBUG   opendrift.models.basemodel.environment:801:       Using fallback value 0 for y_sea_water_velocity for all profiles
+09:11:58 DEBUG   opendrift.models.basemodel.environment:801:       Using fallback value 2 for sea_water_temperature for all profiles
+09:11:58 DEBUG   opendrift.models.basemodel.environment:801:       Using fallback value 35 for sea_water_salinity for all profiles
+09:11:58 DEBUG   opendrift.models.basemodel.environment:898: ------------ SUMMARY -------------
+09:11:58 DEBUG   opendrift.models.basemodel.environment:900:     x_sea_water_velocity: 0 (min) 0 (max)
+09:11:58 DEBUG   opendrift.models.basemodel.environment:900:     y_sea_water_velocity: 0 (min) 0 (max)
+09:11:58 DEBUG   opendrift.models.basemodel.environment:900:     sea_floor_depth_below_sea_level: 10000 (min) 10000 (max)
+09:11:58 DEBUG   opendrift.models.basemodel.environment:900:     sea_surface_height: 0 (min) 0 (max)
+09:11:58 DEBUG   opendrift.models.basemodel.environment:900:     sea_surface_x_slope: 0 (min) 0 (max)
+09:11:58 DEBUG   opendrift.models.basemodel.environment:900:     sea_surface_y_slope: 0 (min) 0 (max)
+09:11:58 DEBUG   opendrift.models.basemodel.environment:900:     x_wind: 0 (min) 0 (max)
+09:11:58 DEBUG   opendrift.models.basemodel.environment:900:     y_wind: 0 (min) 0 (max)
+09:11:58 DEBUG   opendrift.models.basemodel.environment:900:     horizontal_diffusivity: 0 (min) 0 (max)
+09:11:58 DEBUG   opendrift.models.basemodel.environment:900:     sea_surface_wave_significant_height: 0 (min) 0 (max)
+09:11:58 DEBUG   opendrift.models.basemodel.environment:900:     sea_surface_wave_from_direction: 0 (min) 0 (max)
+09:11:58 DEBUG   opendrift.models.basemodel.environment:900:     sea_surface_wave_stokes_drift_x_velocity: 0 (min) 0 (max)
+09:11:58 DEBUG   opendrift.models.basemodel.environment:900:     sea_surface_wave_stokes_drift_y_velocity: 0 (min) 0 (max)
+09:11:58 DEBUG   opendrift.models.basemodel.environment:900:     sea_water_temperature: 2 (min) 2 (max)
+09:11:58 DEBUG   opendrift.models.basemodel.environment:900:     sea_water_salinity: 35 (min) 35 (max)
+09:11:58 DEBUG   opendrift.models.basemodel.environment:900:     sea_ice_area_fraction: 0 (min) 0 (max)
+09:11:58 DEBUG   opendrift.models.basemodel.environment:900:     sea_ice_thickness: 0 (min) 0 (max)
+09:11:58 DEBUG   opendrift.models.basemodel.environment:900:     sea_ice_x_velocity: 0 (min) 0 (max)
+09:11:58 DEBUG   opendrift.models.basemodel.environment:900:     sea_ice_y_velocity: 0 (min) 0 (max)
+09:11:58 DEBUG   opendrift.models.basemodel.environment:900:     land_binary_mask: 0 (min) 0 (max)
+09:11:58 DEBUG   opendrift.models.basemodel.environment:902: ---------------------------------
+09:11:58 DEBUG   opendrift.models.physics_methods:823: Calculating Hs from wind, min: 0.000000, mean: 0.000000, max: 0.000000
+09:11:58 WARNING opendrift.models.physics_methods:832: Setting wave direction equal to wind direction, min: 0.000000, mean: 0.000000, max: 0.000000
+09:11:58 DEBUG   opendrift:689: No elements hit coastline.
+09:11:58 DEBUG   opendrift:1732: No elements to deactivate
+09:11:58 DEBUG   opendrift:2193: Calling OpenBerg.update()
+09:11:58 DEBUG   opendrift.models.openberg:507: Advection with surface currents
+09:11:58 DEBUG   opendrift.models.openberg:573: No grounded icebergs detected in this timestep
+09:11:58 DEBUG   opendrift:1680: Horizontal diffusivity is 0, no random walk.
+09:11:58 DEBUG   opendrift:904: to be seeded: 0, already seeded 1
+09:11:58 DEBUG   opendrift:2135: ======================================================================
+09:11:58 INFO    opendrift:2136: 2023-09-10 14:36:00 - step 3 of 12 - 1 active elements (0 deactivated)
+09:11:58 DEBUG   opendrift:2142: 0 elements scheduled.
+09:11:58 DEBUG   opendrift:2144: ======================================================================
+09:11:58 DEBUG   opendrift:2153: 		latitude = 80.57939910888672
+09:11:58 DEBUG   opendrift:2153: 		longitude = 37.819149017333984
+09:11:58 DEBUG   opendrift:2153: 		z = 0.0
+09:11:58 DEBUG   opendrift:2156: ---------------------------------
+09:11:58 DEBUG   opendrift.models.basemodel.environment:599: ----------------------------------------
+09:11:58 DEBUG   opendrift.models.basemodel.environment:600: Variable group ['land_binary_mask']
+09:11:58 DEBUG   opendrift.models.basemodel.environment:601: ----------------------------------------
+09:11:58 DEBUG   opendrift.models.basemodel.environment:605: Calling reader global_landmask
+09:11:58 DEBUG   opendrift.models.basemodel.environment:606: ----------------------------------------
+09:11:58 DEBUG   opendrift.models.basemodel.environment:626: Data needed for 1 elements
+09:11:58 DEBUG   opendrift.readers.basereader.variables:761: Fetching variables from global_landmask covering 1 elements
+09:11:58 DEBUG   opendrift.readers.basereader.continuous:37: Fetched env-before
+09:11:58 DEBUG   opendrift.readers.basereader.variables:639: Checking land_binary_mask for invalid values
+09:11:58 DEBUG   opendrift.readers.basereader.variables:797: Reader projection is latlon - rotation of vectors is not needed.
+09:11:58 DEBUG   opendrift.models.basemodel.environment:762: Obtained data for all elements.
+09:11:58 DEBUG   opendrift.models.basemodel.environment:775: ---------------------------------------
+09:11:58 DEBUG   opendrift.models.basemodel.environment:776: Finished processing all variable groups
+09:11:58 DEBUG   opendrift.models.basemodel.environment:796: Creating empty dictionary for profiles not profided by any reader: ['x_sea_water_velocity', 'y_sea_water_velocity', 'sea_water_temperature', 'sea_water_salinity']
+09:11:58 DEBUG   opendrift.models.basemodel.environment:801:       Using fallback value 0 for x_sea_water_velocity for all profiles
+09:11:58 DEBUG   opendrift.models.basemodel.environment:801:       Using fallback value 0 for y_sea_water_velocity for all profiles
+09:11:58 DEBUG   opendrift.models.basemodel.environment:801:       Using fallback value 2 for sea_water_temperature for all profiles
+09:11:58 DEBUG   opendrift.models.basemodel.environment:801:       Using fallback value 35 for sea_water_salinity for all profiles
+09:11:58 DEBUG   opendrift.models.basemodel.environment:898: ------------ SUMMARY -------------
+09:11:58 DEBUG   opendrift.models.basemodel.environment:900:     x_sea_water_velocity: 0 (min) 0 (max)
+09:11:58 DEBUG   opendrift.models.basemodel.environment:900:     y_sea_water_velocity: 0 (min) 0 (max)
+09:11:58 DEBUG   opendrift.models.basemodel.environment:900:     sea_floor_depth_below_sea_level: 10000 (min) 10000 (max)
+09:11:58 DEBUG   opendrift.models.basemodel.environment:900:     sea_surface_height: 0 (min) 0 (max)
+09:11:58 DEBUG   opendrift.models.basemodel.environment:900:     sea_surface_x_slope: 0 (min) 0 (max)
+09:11:58 DEBUG   opendrift.models.basemodel.environment:900:     sea_surface_y_slope: 0 (min) 0 (max)
+09:11:58 DEBUG   opendrift.models.basemodel.environment:900:     x_wind: 0 (min) 0 (max)
+09:11:58 DEBUG   opendrift.models.basemodel.environment:900:     y_wind: 0 (min) 0 (max)
+09:11:58 DEBUG   opendrift.models.basemodel.environment:900:     horizontal_diffusivity: 0 (min) 0 (max)
+09:11:58 DEBUG   opendrift.models.basemodel.environment:900:     sea_surface_wave_significant_height: 0 (min) 0 (max)
+09:11:58 DEBUG   opendrift.models.basemodel.environment:900:     sea_surface_wave_from_direction: 0 (min) 0 (max)
+09:11:58 DEBUG   opendrift.models.basemodel.environment:900:     sea_surface_wave_stokes_drift_x_velocity: 0 (min) 0 (max)
+09:11:58 DEBUG   opendrift.models.basemodel.environment:900:     sea_surface_wave_stokes_drift_y_velocity: 0 (min) 0 (max)
+09:11:58 DEBUG   opendrift.models.basemodel.environment:900:     sea_water_temperature: 2 (min) 2 (max)
+09:11:58 DEBUG   opendrift.models.basemodel.environment:900:     sea_water_salinity: 35 (min) 35 (max)
+09:11:58 DEBUG   opendrift.models.basemodel.environment:900:     sea_ice_area_fraction: 0 (min) 0 (max)
+09:11:58 DEBUG   opendrift.models.basemodel.environment:900:     sea_ice_thickness: 0 (min) 0 (max)
+09:11:58 DEBUG   opendrift.models.basemodel.environment:900:     sea_ice_x_velocity: 0 (min) 0 (max)
+09:11:58 DEBUG   opendrift.models.basemodel.environment:900:     sea_ice_y_velocity: 0 (min) 0 (max)
+09:11:58 DEBUG   opendrift.models.basemodel.environment:900:     land_binary_mask: 0 (min) 0 (max)
+09:11:58 DEBUG   opendrift.models.basemodel.environment:902: ---------------------------------
+09:11:58 DEBUG   opendrift.models.physics_methods:823: Calculating Hs from wind, min: 0.000000, mean: 0.000000, max: 0.000000
+09:11:58 WARNING opendrift.models.physics_methods:832: Setting wave direction equal to wind direction, min: 0.000000, mean: 0.000000, max: 0.000000
+09:11:58 DEBUG   opendrift:689: No elements hit coastline.
+09:11:58 DEBUG   opendrift:1732: No elements to deactivate
+09:11:58 DEBUG   opendrift:2193: Calling OpenBerg.update()
+09:11:58 DEBUG   opendrift.models.openberg:507: Advection with surface currents
+09:11:58 DEBUG   opendrift.models.openberg:573: No grounded icebergs detected in this timestep
+09:11:58 DEBUG   opendrift:1680: Horizontal diffusivity is 0, no random walk.
+09:11:58 DEBUG   opendrift:904: to be seeded: 0, already seeded 1
+09:11:58 DEBUG   opendrift:2135: ======================================================================
+09:11:58 INFO    opendrift:2136: 2023-09-10 15:36:00 - step 4 of 12 - 1 active elements (0 deactivated)
+09:11:58 DEBUG   opendrift:2142: 0 elements scheduled.
+09:11:58 DEBUG   opendrift:2144: ======================================================================
+09:11:58 DEBUG   opendrift:2153: 		latitude = 80.57939910888672
+09:11:58 DEBUG   opendrift:2153: 		longitude = 37.819149017333984
+09:11:58 DEBUG   opendrift:2153: 		z = 0.0
+09:11:58 DEBUG   opendrift:2156: ---------------------------------
+09:11:58 DEBUG   opendrift.models.basemodel.environment:599: ----------------------------------------
+09:11:58 DEBUG   opendrift.models.basemodel.environment:600: Variable group ['land_binary_mask']
+09:11:58 DEBUG   opendrift.models.basemodel.environment:601: ----------------------------------------
+09:11:58 DEBUG   opendrift.models.basemodel.environment:605: Calling reader global_landmask
+09:11:58 DEBUG   opendrift.models.basemodel.environment:606: ----------------------------------------
+09:11:58 DEBUG   opendrift.models.basemodel.environment:626: Data needed for 1 elements
+09:11:58 DEBUG   opendrift.readers.basereader.variables:761: Fetching variables from global_landmask covering 1 elements
+09:11:58 DEBUG   opendrift.readers.basereader.continuous:37: Fetched env-before
+09:11:58 DEBUG   opendrift.readers.basereader.variables:639: Checking land_binary_mask for invalid values
+09:11:58 DEBUG   opendrift.readers.basereader.variables:797: Reader projection is latlon - rotation of vectors is not needed.
+09:11:58 DEBUG   opendrift.models.basemodel.environment:762: Obtained data for all elements.
+09:11:58 DEBUG   opendrift.models.basemodel.environment:775: ---------------------------------------
+09:11:58 DEBUG   opendrift.models.basemodel.environment:776: Finished processing all variable groups
+09:11:58 DEBUG   opendrift.models.basemodel.environment:796: Creating empty dictionary for profiles not profided by any reader: ['x_sea_water_velocity', 'y_sea_water_velocity', 'sea_water_temperature', 'sea_water_salinity']
+09:11:58 DEBUG   opendrift.models.basemodel.environment:801:       Using fallback value 0 for x_sea_water_velocity for all profiles
+09:11:58 DEBUG   opendrift.models.basemodel.environment:801:       Using fallback value 0 for y_sea_water_velocity for all profiles
+09:11:58 DEBUG   opendrift.models.basemodel.environment:801:       Using fallback value 2 for sea_water_temperature for all profiles
+09:11:58 DEBUG   opendrift.models.basemodel.environment:801:       Using fallback value 35 for sea_water_salinity for all profiles
+09:11:58 DEBUG   opendrift.models.basemodel.environment:898: ------------ SUMMARY -------------
+09:11:58 DEBUG   opendrift.models.basemodel.environment:900:     x_sea_water_velocity: 0 (min) 0 (max)
+09:11:58 DEBUG   opendrift.models.basemodel.environment:900:     y_sea_water_velocity: 0 (min) 0 (max)
+09:11:58 DEBUG   opendrift.models.basemodel.environment:900:     sea_floor_depth_below_sea_level: 10000 (min) 10000 (max)
+09:11:58 DEBUG   opendrift.models.basemodel.environment:900:     sea_surface_height: 0 (min) 0 (max)
+09:11:58 DEBUG   opendrift.models.basemodel.environment:900:     sea_surface_x_slope: 0 (min) 0 (max)
+09:11:58 DEBUG   opendrift.models.basemodel.environment:900:     sea_surface_y_slope: 0 (min) 0 (max)
+09:11:58 DEBUG   opendrift.models.basemodel.environment:900:     x_wind: 0 (min) 0 (max)
+09:11:58 DEBUG   opendrift.models.basemodel.environment:900:     y_wind: 0 (min) 0 (max)
+09:11:58 DEBUG   opendrift.models.basemodel.environment:900:     horizontal_diffusivity: 0 (min) 0 (max)
+09:11:58 DEBUG   opendrift.models.basemodel.environment:900:     sea_surface_wave_significant_height: 0 (min) 0 (max)
+09:11:58 DEBUG   opendrift.models.basemodel.environment:900:     sea_surface_wave_from_direction: 0 (min) 0 (max)
+09:11:58 DEBUG   opendrift.models.basemodel.environment:900:     sea_surface_wave_stokes_drift_x_velocity: 0 (min) 0 (max)
+09:11:58 DEBUG   opendrift.models.basemodel.environment:900:     sea_surface_wave_stokes_drift_y_velocity: 0 (min) 0 (max)
+09:11:58 DEBUG   opendrift.models.basemodel.environment:900:     sea_water_temperature: 2 (min) 2 (max)
+09:11:58 DEBUG   opendrift.models.basemodel.environment:900:     sea_water_salinity: 35 (min) 35 (max)
+09:11:58 DEBUG   opendrift.models.basemodel.environment:900:     sea_ice_area_fraction: 0 (min) 0 (max)
+09:11:58 DEBUG   opendrift.models.basemodel.environment:900:     sea_ice_thickness: 0 (min) 0 (max)
+09:11:58 DEBUG   opendrift.models.basemodel.environment:900:     sea_ice_x_velocity: 0 (min) 0 (max)
+09:11:58 DEBUG   opendrift.models.basemodel.environment:900:     sea_ice_y_velocity: 0 (min) 0 (max)
+09:11:58 DEBUG   opendrift.models.basemodel.environment:900:     land_binary_mask: 0 (min) 0 (max)
+09:11:58 DEBUG   opendrift.models.basemodel.environment:902: ---------------------------------
+09:11:58 DEBUG   opendrift.models.physics_methods:823: Calculating Hs from wind, min: 0.000000, mean: 0.000000, max: 0.000000
+09:11:58 WARNING opendrift.models.physics_methods:832: Setting wave direction equal to wind direction, min: 0.000000, mean: 0.000000, max: 0.000000
+09:11:58 DEBUG   opendrift:689: No elements hit coastline.
+09:11:58 DEBUG   opendrift:1732: No elements to deactivate
+09:11:58 DEBUG   opendrift:2193: Calling OpenBerg.update()
+09:11:58 DEBUG   opendrift.models.openberg:507: Advection with surface currents
+09:11:58 DEBUG   opendrift.models.openberg:573: No grounded icebergs detected in this timestep
+09:11:58 DEBUG   opendrift:1680: Horizontal diffusivity is 0, no random walk.
+09:11:58 DEBUG   opendrift:904: to be seeded: 0, already seeded 1
+09:11:58 DEBUG   opendrift:2135: ======================================================================
+09:11:58 INFO    opendrift:2136: 2023-09-10 16:36:00 - step 5 of 12 - 1 active elements (0 deactivated)
+09:11:58 DEBUG   opendrift:2142: 0 elements scheduled.
+09:11:58 DEBUG   opendrift:2144: ======================================================================
+09:11:58 DEBUG   opendrift:2153: 		latitude = 80.57939910888672
+09:11:58 DEBUG   opendrift:2153: 		longitude = 37.819149017333984
+09:11:58 DEBUG   opendrift:2153: 		z = 0.0
+09:11:58 DEBUG   opendrift:2156: ---------------------------------
+09:11:58 DEBUG   opendrift.models.basemodel.environment:599: ----------------------------------------
+09:11:58 DEBUG   opendrift.models.basemodel.environment:600: Variable group ['land_binary_mask']
+09:11:58 DEBUG   opendrift.models.basemodel.environment:601: ----------------------------------------
+09:11:58 DEBUG   opendrift.models.basemodel.environment:605: Calling reader global_landmask
+09:11:58 DEBUG   opendrift.models.basemodel.environment:606: ----------------------------------------
+09:11:58 DEBUG   opendrift.models.basemodel.environment:626: Data needed for 1 elements
+09:11:58 DEBUG   opendrift.readers.basereader.variables:761: Fetching variables from global_landmask covering 1 elements
+09:11:58 DEBUG   opendrift.readers.basereader.continuous:37: Fetched env-before
+09:11:58 DEBUG   opendrift.readers.basereader.variables:639: Checking land_binary_mask for invalid values
+09:11:58 DEBUG   opendrift.readers.basereader.variables:797: Reader projection is latlon - rotation of vectors is not needed.
+09:11:58 DEBUG   opendrift.models.basemodel.environment:762: Obtained data for all elements.
+09:11:58 DEBUG   opendrift.models.basemodel.environment:775: ---------------------------------------
+09:11:58 DEBUG   opendrift.models.basemodel.environment:776: Finished processing all variable groups
+09:11:58 DEBUG   opendrift.models.basemodel.environment:796: Creating empty dictionary for profiles not profided by any reader: ['x_sea_water_velocity', 'y_sea_water_velocity', 'sea_water_temperature', 'sea_water_salinity']
+09:11:58 DEBUG   opendrift.models.basemodel.environment:801:       Using fallback value 0 for x_sea_water_velocity for all profiles
+09:11:58 DEBUG   opendrift.models.basemodel.environment:801:       Using fallback value 0 for y_sea_water_velocity for all profiles
+09:11:58 DEBUG   opendrift.models.basemodel.environment:801:       Using fallback value 2 for sea_water_temperature for all profiles
+09:11:58 DEBUG   opendrift.models.basemodel.environment:801:       Using fallback value 35 for sea_water_salinity for all profiles
+09:11:58 DEBUG   opendrift.models.basemodel.environment:898: ------------ SUMMARY -------------
+09:11:58 DEBUG   opendrift.models.basemodel.environment:900:     x_sea_water_velocity: 0 (min) 0 (max)
+09:11:58 DEBUG   opendrift.models.basemodel.environment:900:     y_sea_water_velocity: 0 (min) 0 (max)
+09:11:58 DEBUG   opendrift.models.basemodel.environment:900:     sea_floor_depth_below_sea_level: 10000 (min) 10000 (max)
+09:11:58 DEBUG   opendrift.models.basemodel.environment:900:     sea_surface_height: 0 (min) 0 (max)
+09:11:58 DEBUG   opendrift.models.basemodel.environment:900:     sea_surface_x_slope: 0 (min) 0 (max)
+09:11:58 DEBUG   opendrift.models.basemodel.environment:900:     sea_surface_y_slope: 0 (min) 0 (max)
+09:11:58 DEBUG   opendrift.models.basemodel.environment:900:     x_wind: 0 (min) 0 (max)
+09:11:58 DEBUG   opendrift.models.basemodel.environment:900:     y_wind: 0 (min) 0 (max)
+09:11:58 DEBUG   opendrift.models.basemodel.environment:900:     horizontal_diffusivity: 0 (min) 0 (max)
+09:11:58 DEBUG   opendrift.models.basemodel.environment:900:     sea_surface_wave_significant_height: 0 (min) 0 (max)
+09:11:58 DEBUG   opendrift.models.basemodel.environment:900:     sea_surface_wave_from_direction: 0 (min) 0 (max)
+09:11:58 DEBUG   opendrift.models.basemodel.environment:900:     sea_surface_wave_stokes_drift_x_velocity: 0 (min) 0 (max)
+09:11:58 DEBUG   opendrift.models.basemodel.environment:900:     sea_surface_wave_stokes_drift_y_velocity: 0 (min) 0 (max)
+09:11:58 DEBUG   opendrift.models.basemodel.environment:900:     sea_water_temperature: 2 (min) 2 (max)
+09:11:58 DEBUG   opendrift.models.basemodel.environment:900:     sea_water_salinity: 35 (min) 35 (max)
+09:11:58 DEBUG   opendrift.models.basemodel.environment:900:     sea_ice_area_fraction: 0 (min) 0 (max)
+09:11:58 DEBUG   opendrift.models.basemodel.environment:900:     sea_ice_thickness: 0 (min) 0 (max)
+09:11:58 DEBUG   opendrift.models.basemodel.environment:900:     sea_ice_x_velocity: 0 (min) 0 (max)
+09:11:58 DEBUG   opendrift.models.basemodel.environment:900:     sea_ice_y_velocity: 0 (min) 0 (max)
+09:11:58 DEBUG   opendrift.models.basemodel.environment:900:     land_binary_mask: 0 (min) 0 (max)
+09:11:58 DEBUG   opendrift.models.basemodel.environment:902: ---------------------------------
+09:11:58 DEBUG   opendrift.models.physics_methods:823: Calculating Hs from wind, min: 0.000000, mean: 0.000000, max: 0.000000
+09:11:58 WARNING opendrift.models.physics_methods:832: Setting wave direction equal to wind direction, min: 0.000000, mean: 0.000000, max: 0.000000
+09:11:58 DEBUG   opendrift:689: No elements hit coastline.
+09:11:58 DEBUG   opendrift:1732: No elements to deactivate
+09:11:58 DEBUG   opendrift:2193: Calling OpenBerg.update()
+09:11:58 DEBUG   opendrift.models.openberg:507: Advection with surface currents
+09:11:58 DEBUG   opendrift.models.openberg:573: No grounded icebergs detected in this timestep
+09:11:58 DEBUG   opendrift:1680: Horizontal diffusivity is 0, no random walk.
+09:11:58 DEBUG   opendrift:904: to be seeded: 0, already seeded 1
+09:11:58 DEBUG   opendrift:2135: ======================================================================
+09:11:58 INFO    opendrift:2136: 2023-09-10 17:36:00 - step 6 of 12 - 1 active elements (0 deactivated)
+09:11:58 DEBUG   opendrift:2142: 0 elements scheduled.
+09:11:58 DEBUG   opendrift:2144: ======================================================================
+09:11:58 DEBUG   opendrift:2153: 		latitude = 80.57939910888672
+09:11:58 DEBUG   opendrift:2153: 		longitude = 37.819149017333984
+09:11:58 DEBUG   opendrift:2153: 		z = 0.0
+09:11:58 DEBUG   opendrift:2156: ---------------------------------
+09:11:58 DEBUG   opendrift.models.basemodel.environment:599: ----------------------------------------
+09:11:58 DEBUG   opendrift.models.basemodel.environment:600: Variable group ['land_binary_mask']
+09:11:58 DEBUG   opendrift.models.basemodel.environment:601: ----------------------------------------
+09:11:58 DEBUG   opendrift.models.basemodel.environment:605: Calling reader global_landmask
+09:11:58 DEBUG   opendrift.models.basemodel.environment:606: ----------------------------------------
+09:11:58 DEBUG   opendrift.models.basemodel.environment:626: Data needed for 1 elements
+09:11:58 DEBUG   opendrift.readers.basereader.variables:761: Fetching variables from global_landmask covering 1 elements
+09:11:58 DEBUG   opendrift.readers.basereader.continuous:37: Fetched env-before
+09:11:58 DEBUG   opendrift.readers.basereader.variables:639: Checking land_binary_mask for invalid values
+09:11:58 DEBUG   opendrift.readers.basereader.variables:797: Reader projection is latlon - rotation of vectors is not needed.
+09:11:58 DEBUG   opendrift.models.basemodel.environment:762: Obtained data for all elements.
+09:11:58 DEBUG   opendrift.models.basemodel.environment:775: ---------------------------------------
+09:11:58 DEBUG   opendrift.models.basemodel.environment:776: Finished processing all variable groups
+09:11:58 DEBUG   opendrift.models.basemodel.environment:796: Creating empty dictionary for profiles not profided by any reader: ['x_sea_water_velocity', 'y_sea_water_velocity', 'sea_water_temperature', 'sea_water_salinity']
+09:11:58 DEBUG   opendrift.models.basemodel.environment:801:       Using fallback value 0 for x_sea_water_velocity for all profiles
+09:11:58 DEBUG   opendrift.models.basemodel.environment:801:       Using fallback value 0 for y_sea_water_velocity for all profiles
+09:11:58 DEBUG   opendrift.models.basemodel.environment:801:       Using fallback value 2 for sea_water_temperature for all profiles
+09:11:58 DEBUG   opendrift.models.basemodel.environment:801:       Using fallback value 35 for sea_water_salinity for all profiles
+09:11:58 DEBUG   opendrift.models.basemodel.environment:898: ------------ SUMMARY -------------
+09:11:58 DEBUG   opendrift.models.basemodel.environment:900:     x_sea_water_velocity: 0 (min) 0 (max)
+09:11:58 DEBUG   opendrift.models.basemodel.environment:900:     y_sea_water_velocity: 0 (min) 0 (max)
+09:11:58 DEBUG   opendrift.models.basemodel.environment:900:     sea_floor_depth_below_sea_level: 10000 (min) 10000 (max)
+09:11:58 DEBUG   opendrift.models.basemodel.environment:900:     sea_surface_height: 0 (min) 0 (max)
+09:11:58 DEBUG   opendrift.models.basemodel.environment:900:     sea_surface_x_slope: 0 (min) 0 (max)
+09:11:58 DEBUG   opendrift.models.basemodel.environment:900:     sea_surface_y_slope: 0 (min) 0 (max)
+09:11:58 DEBUG   opendrift.models.basemodel.environment:900:     x_wind: 0 (min) 0 (max)
+09:11:58 DEBUG   opendrift.models.basemodel.environment:900:     y_wind: 0 (min) 0 (max)
+09:11:58 DEBUG   opendrift.models.basemodel.environment:900:     horizontal_diffusivity: 0 (min) 0 (max)
+09:11:58 DEBUG   opendrift.models.basemodel.environment:900:     sea_surface_wave_significant_height: 0 (min) 0 (max)
+09:11:58 DEBUG   opendrift.models.basemodel.environment:900:     sea_surface_wave_from_direction: 0 (min) 0 (max)
+09:11:58 DEBUG   opendrift.models.basemodel.environment:900:     sea_surface_wave_stokes_drift_x_velocity: 0 (min) 0 (max)
+09:11:58 DEBUG   opendrift.models.basemodel.environment:900:     sea_surface_wave_stokes_drift_y_velocity: 0 (min) 0 (max)
+09:11:58 DEBUG   opendrift.models.basemodel.environment:900:     sea_water_temperature: 2 (min) 2 (max)
+09:11:58 DEBUG   opendrift.models.basemodel.environment:900:     sea_water_salinity: 35 (min) 35 (max)
+09:11:58 DEBUG   opendrift.models.basemodel.environment:900:     sea_ice_area_fraction: 0 (min) 0 (max)
+09:11:58 DEBUG   opendrift.models.basemodel.environment:900:     sea_ice_thickness: 0 (min) 0 (max)
+09:11:58 DEBUG   opendrift.models.basemodel.environment:900:     sea_ice_x_velocity: 0 (min) 0 (max)
+09:11:58 DEBUG   opendrift.models.basemodel.environment:900:     sea_ice_y_velocity: 0 (min) 0 (max)
+09:11:58 DEBUG   opendrift.models.basemodel.environment:900:     land_binary_mask: 0 (min) 0 (max)
+09:11:58 DEBUG   opendrift.models.basemodel.environment:902: ---------------------------------
+09:11:58 DEBUG   opendrift.models.physics_methods:823: Calculating Hs from wind, min: 0.000000, mean: 0.000000, max: 0.000000
+09:11:58 WARNING opendrift.models.physics_methods:832: Setting wave direction equal to wind direction, min: 0.000000, mean: 0.000000, max: 0.000000
+09:11:58 DEBUG   opendrift:689: No elements hit coastline.
+09:11:58 DEBUG   opendrift:1732: No elements to deactivate
+09:11:58 DEBUG   opendrift:2193: Calling OpenBerg.update()
+09:11:58 DEBUG   opendrift.models.openberg:507: Advection with surface currents
+09:11:58 DEBUG   opendrift.models.openberg:573: No grounded icebergs detected in this timestep
+09:11:58 DEBUG   opendrift:1680: Horizontal diffusivity is 0, no random walk.
+09:11:58 DEBUG   opendrift:904: to be seeded: 0, already seeded 1
+09:11:58 DEBUG   opendrift:2135: ======================================================================
+09:11:58 INFO    opendrift:2136: 2023-09-10 18:36:00 - step 7 of 12 - 1 active elements (0 deactivated)
+09:11:58 DEBUG   opendrift:2142: 0 elements scheduled.
+09:11:58 DEBUG   opendrift:2144: ======================================================================
+09:11:58 DEBUG   opendrift:2153: 		latitude = 80.57939910888672
+09:11:58 DEBUG   opendrift:2153: 		longitude = 37.819149017333984
+09:11:58 DEBUG   opendrift:2153: 		z = 0.0
+09:11:58 DEBUG   opendrift:2156: ---------------------------------
+09:11:58 DEBUG   opendrift.models.basemodel.environment:599: ----------------------------------------
+09:11:58 DEBUG   opendrift.models.basemodel.environment:600: Variable group ['land_binary_mask']
+09:11:58 DEBUG   opendrift.models.basemodel.environment:601: ----------------------------------------
+09:11:58 DEBUG   opendrift.models.basemodel.environment:605: Calling reader global_landmask
+09:11:58 DEBUG   opendrift.models.basemodel.environment:606: ----------------------------------------
+09:11:58 DEBUG   opendrift.models.basemodel.environment:626: Data needed for 1 elements
+09:11:58 DEBUG   opendrift.readers.basereader.variables:761: Fetching variables from global_landmask covering 1 elements
+09:11:58 DEBUG   opendrift.readers.basereader.continuous:37: Fetched env-before
+09:11:58 DEBUG   opendrift.readers.basereader.variables:639: Checking land_binary_mask for invalid values
+09:11:58 DEBUG   opendrift.readers.basereader.variables:797: Reader projection is latlon - rotation of vectors is not needed.
+09:11:58 DEBUG   opendrift.models.basemodel.environment:762: Obtained data for all elements.
+09:11:58 DEBUG   opendrift.models.basemodel.environment:775: ---------------------------------------
+09:11:58 DEBUG   opendrift.models.basemodel.environment:776: Finished processing all variable groups
+09:11:58 DEBUG   opendrift.models.basemodel.environment:796: Creating empty dictionary for profiles not profided by any reader: ['x_sea_water_velocity', 'y_sea_water_velocity', 'sea_water_temperature', 'sea_water_salinity']
+09:11:58 DEBUG   opendrift.models.basemodel.environment:801:       Using fallback value 0 for x_sea_water_velocity for all profiles
+09:11:58 DEBUG   opendrift.models.basemodel.environment:801:       Using fallback value 0 for y_sea_water_velocity for all profiles
+09:11:58 DEBUG   opendrift.models.basemodel.environment:801:       Using fallback value 2 for sea_water_temperature for all profiles
+09:11:58 DEBUG   opendrift.models.basemodel.environment:801:       Using fallback value 35 for sea_water_salinity for all profiles
+09:11:58 DEBUG   opendrift.models.basemodel.environment:898: ------------ SUMMARY -------------
+09:11:58 DEBUG   opendrift.models.basemodel.environment:900:     x_sea_water_velocity: 0 (min) 0 (max)
+09:11:58 DEBUG   opendrift.models.basemodel.environment:900:     y_sea_water_velocity: 0 (min) 0 (max)
+09:11:58 DEBUG   opendrift.models.basemodel.environment:900:     sea_floor_depth_below_sea_level: 10000 (min) 10000 (max)
+09:11:58 DEBUG   opendrift.models.basemodel.environment:900:     sea_surface_height: 0 (min) 0 (max)
+09:11:58 DEBUG   opendrift.models.basemodel.environment:900:     sea_surface_x_slope: 0 (min) 0 (max)
+09:11:58 DEBUG   opendrift.models.basemodel.environment:900:     sea_surface_y_slope: 0 (min) 0 (max)
+09:11:58 DEBUG   opendrift.models.basemodel.environment:900:     x_wind: 0 (min) 0 (max)
+09:11:58 DEBUG   opendrift.models.basemodel.environment:900:     y_wind: 0 (min) 0 (max)
+09:11:58 DEBUG   opendrift.models.basemodel.environment:900:     horizontal_diffusivity: 0 (min) 0 (max)
+09:11:58 DEBUG   opendrift.models.basemodel.environment:900:     sea_surface_wave_significant_height: 0 (min) 0 (max)
+09:11:58 DEBUG   opendrift.models.basemodel.environment:900:     sea_surface_wave_from_direction: 0 (min) 0 (max)
+09:11:58 DEBUG   opendrift.models.basemodel.environment:900:     sea_surface_wave_stokes_drift_x_velocity: 0 (min) 0 (max)
+09:11:58 DEBUG   opendrift.models.basemodel.environment:900:     sea_surface_wave_stokes_drift_y_velocity: 0 (min) 0 (max)
+09:11:58 DEBUG   opendrift.models.basemodel.environment:900:     sea_water_temperature: 2 (min) 2 (max)
+09:11:58 DEBUG   opendrift.models.basemodel.environment:900:     sea_water_salinity: 35 (min) 35 (max)
+09:11:58 DEBUG   opendrift.models.basemodel.environment:900:     sea_ice_area_fraction: 0 (min) 0 (max)
+09:11:58 DEBUG   opendrift.models.basemodel.environment:900:     sea_ice_thickness: 0 (min) 0 (max)
+09:11:58 DEBUG   opendrift.models.basemodel.environment:900:     sea_ice_x_velocity: 0 (min) 0 (max)
+09:11:58 DEBUG   opendrift.models.basemodel.environment:900:     sea_ice_y_velocity: 0 (min) 0 (max)
+09:11:58 DEBUG   opendrift.models.basemodel.environment:900:     land_binary_mask: 0 (min) 0 (max)
+09:11:58 DEBUG   opendrift.models.basemodel.environment:902: ---------------------------------
+09:11:58 DEBUG   opendrift.models.physics_methods:823: Calculating Hs from wind, min: 0.000000, mean: 0.000000, max: 0.000000
+09:11:58 WARNING opendrift.models.physics_methods:832: Setting wave direction equal to wind direction, min: 0.000000, mean: 0.000000, max: 0.000000
+09:11:58 DEBUG   opendrift:689: No elements hit coastline.
+09:11:59 DEBUG   opendrift:1732: No elements to deactivate
+09:11:59 DEBUG   opendrift:2193: Calling OpenBerg.update()
+09:11:59 DEBUG   opendrift.models.openberg:507: Advection with surface currents
+09:11:59 DEBUG   opendrift.models.openberg:573: No grounded icebergs detected in this timestep
+09:11:59 DEBUG   opendrift:1680: Horizontal diffusivity is 0, no random walk.
+09:11:59 DEBUG   opendrift:904: to be seeded: 0, already seeded 1
+09:11:59 DEBUG   opendrift:2135: ======================================================================
+09:11:59 INFO    opendrift:2136: 2023-09-10 19:36:00 - step 8 of 12 - 1 active elements (0 deactivated)
+09:11:59 DEBUG   opendrift:2142: 0 elements scheduled.
+09:11:59 DEBUG   opendrift:2144: ======================================================================
+09:11:59 DEBUG   opendrift:2153: 		latitude = 80.57939910888672
+09:11:59 DEBUG   opendrift:2153: 		longitude = 37.819149017333984
+09:11:59 DEBUG   opendrift:2153: 		z = 0.0
+09:11:59 DEBUG   opendrift:2156: ---------------------------------
+09:11:59 DEBUG   opendrift.models.basemodel.environment:599: ----------------------------------------
+09:11:59 DEBUG   opendrift.models.basemodel.environment:600: Variable group ['land_binary_mask']
+09:11:59 DEBUG   opendrift.models.basemodel.environment:601: ----------------------------------------
+09:11:59 DEBUG   opendrift.models.basemodel.environment:605: Calling reader global_landmask
+09:11:59 DEBUG   opendrift.models.basemodel.environment:606: ----------------------------------------
+09:11:59 DEBUG   opendrift.models.basemodel.environment:626: Data needed for 1 elements
+09:11:59 DEBUG   opendrift.readers.basereader.variables:761: Fetching variables from global_landmask covering 1 elements
+09:11:59 DEBUG   opendrift.readers.basereader.continuous:37: Fetched env-before
+09:11:59 DEBUG   opendrift.readers.basereader.variables:639: Checking land_binary_mask for invalid values
+09:11:59 DEBUG   opendrift.readers.basereader.variables:797: Reader projection is latlon - rotation of vectors is not needed.
+09:11:59 DEBUG   opendrift.models.basemodel.environment:762: Obtained data for all elements.
+09:11:59 DEBUG   opendrift.models.basemodel.environment:775: ---------------------------------------
+09:11:59 DEBUG   opendrift.models.basemodel.environment:776: Finished processing all variable groups
+09:11:59 DEBUG   opendrift.models.basemodel.environment:796: Creating empty dictionary for profiles not profided by any reader: ['x_sea_water_velocity', 'y_sea_water_velocity', 'sea_water_temperature', 'sea_water_salinity']
+09:11:59 DEBUG   opendrift.models.basemodel.environment:801:       Using fallback value 0 for x_sea_water_velocity for all profiles
+09:11:59 DEBUG   opendrift.models.basemodel.environment:801:       Using fallback value 0 for y_sea_water_velocity for all profiles
+09:11:59 DEBUG   opendrift.models.basemodel.environment:801:       Using fallback value 2 for sea_water_temperature for all profiles
+09:11:59 DEBUG   opendrift.models.basemodel.environment:801:       Using fallback value 35 for sea_water_salinity for all profiles
+09:11:59 DEBUG   opendrift.models.basemodel.environment:898: ------------ SUMMARY -------------
+09:11:59 DEBUG   opendrift.models.basemodel.environment:900:     x_sea_water_velocity: 0 (min) 0 (max)
+09:11:59 DEBUG   opendrift.models.basemodel.environment:900:     y_sea_water_velocity: 0 (min) 0 (max)
+09:11:59 DEBUG   opendrift.models.basemodel.environment:900:     sea_floor_depth_below_sea_level: 10000 (min) 10000 (max)
+09:11:59 DEBUG   opendrift.models.basemodel.environment:900:     sea_surface_height: 0 (min) 0 (max)
+09:11:59 DEBUG   opendrift.models.basemodel.environment:900:     sea_surface_x_slope: 0 (min) 0 (max)
+09:11:59 DEBUG   opendrift.models.basemodel.environment:900:     sea_surface_y_slope: 0 (min) 0 (max)
+09:11:59 DEBUG   opendrift.models.basemodel.environment:900:     x_wind: 0 (min) 0 (max)
+09:11:59 DEBUG   opendrift.models.basemodel.environment:900:     y_wind: 0 (min) 0 (max)
+09:11:59 DEBUG   opendrift.models.basemodel.environment:900:     horizontal_diffusivity: 0 (min) 0 (max)
+09:11:59 DEBUG   opendrift.models.basemodel.environment:900:     sea_surface_wave_significant_height: 0 (min) 0 (max)
+09:11:59 DEBUG   opendrift.models.basemodel.environment:900:     sea_surface_wave_from_direction: 0 (min) 0 (max)
+09:11:59 DEBUG   opendrift.models.basemodel.environment:900:     sea_surface_wave_stokes_drift_x_velocity: 0 (min) 0 (max)
+09:11:59 DEBUG   opendrift.models.basemodel.environment:900:     sea_surface_wave_stokes_drift_y_velocity: 0 (min) 0 (max)
+09:11:59 DEBUG   opendrift.models.basemodel.environment:900:     sea_water_temperature: 2 (min) 2 (max)
+09:11:59 DEBUG   opendrift.models.basemodel.environment:900:     sea_water_salinity: 35 (min) 35 (max)
+09:11:59 DEBUG   opendrift.models.basemodel.environment:900:     sea_ice_area_fraction: 0 (min) 0 (max)
+09:11:59 DEBUG   opendrift.models.basemodel.environment:900:     sea_ice_thickness: 0 (min) 0 (max)
+09:11:59 DEBUG   opendrift.models.basemodel.environment:900:     sea_ice_x_velocity: 0 (min) 0 (max)
+09:11:59 DEBUG   opendrift.models.basemodel.environment:900:     sea_ice_y_velocity: 0 (min) 0 (max)
+09:11:59 DEBUG   opendrift.models.basemodel.environment:900:     land_binary_mask: 0 (min) 0 (max)
+09:11:59 DEBUG   opendrift.models.basemodel.environment:902: ---------------------------------
+09:11:59 DEBUG   opendrift.models.physics_methods:823: Calculating Hs from wind, min: 0.000000, mean: 0.000000, max: 0.000000
+09:11:59 WARNING opendrift.models.physics_methods:832: Setting wave direction equal to wind direction, min: 0.000000, mean: 0.000000, max: 0.000000
+09:11:59 DEBUG   opendrift:689: No elements hit coastline.
+09:11:59 DEBUG   opendrift:1732: No elements to deactivate
+09:11:59 DEBUG   opendrift:2193: Calling OpenBerg.update()
+09:11:59 DEBUG   opendrift.models.openberg:507: Advection with surface currents
+09:11:59 DEBUG   opendrift.models.openberg:573: No grounded icebergs detected in this timestep
+09:11:59 DEBUG   opendrift:1680: Horizontal diffusivity is 0, no random walk.
+09:11:59 DEBUG   opendrift:904: to be seeded: 0, already seeded 1
+09:11:59 DEBUG   opendrift:2135: ======================================================================
+09:11:59 INFO    opendrift:2136: 2023-09-10 20:36:00 - step 9 of 12 - 1 active elements (0 deactivated)
+09:11:59 DEBUG   opendrift:2142: 0 elements scheduled.
+09:11:59 DEBUG   opendrift:2144: ======================================================================
+09:11:59 DEBUG   opendrift:2153: 		latitude = 80.57939910888672
+09:11:59 DEBUG   opendrift:2153: 		longitude = 37.819149017333984
+09:11:59 DEBUG   opendrift:2153: 		z = 0.0
+09:11:59 DEBUG   opendrift:2156: ---------------------------------
+09:11:59 DEBUG   opendrift.models.basemodel.environment:599: ----------------------------------------
+09:11:59 DEBUG   opendrift.models.basemodel.environment:600: Variable group ['land_binary_mask']
+09:11:59 DEBUG   opendrift.models.basemodel.environment:601: ----------------------------------------
+09:11:59 DEBUG   opendrift.models.basemodel.environment:605: Calling reader global_landmask
+09:11:59 DEBUG   opendrift.models.basemodel.environment:606: ----------------------------------------
+09:11:59 DEBUG   opendrift.models.basemodel.environment:626: Data needed for 1 elements
+09:11:59 DEBUG   opendrift.readers.basereader.variables:761: Fetching variables from global_landmask covering 1 elements
+09:11:59 DEBUG   opendrift.readers.basereader.continuous:37: Fetched env-before
+09:11:59 DEBUG   opendrift.readers.basereader.variables:639: Checking land_binary_mask for invalid values
+09:11:59 DEBUG   opendrift.readers.basereader.variables:797: Reader projection is latlon - rotation of vectors is not needed.
+09:11:59 DEBUG   opendrift.models.basemodel.environment:762: Obtained data for all elements.
+09:11:59 DEBUG   opendrift.models.basemodel.environment:775: ---------------------------------------
+09:11:59 DEBUG   opendrift.models.basemodel.environment:776: Finished processing all variable groups
+09:11:59 DEBUG   opendrift.models.basemodel.environment:796: Creating empty dictionary for profiles not profided by any reader: ['x_sea_water_velocity', 'y_sea_water_velocity', 'sea_water_temperature', 'sea_water_salinity']
+09:11:59 DEBUG   opendrift.models.basemodel.environment:801:       Using fallback value 0 for x_sea_water_velocity for all profiles
+09:11:59 DEBUG   opendrift.models.basemodel.environment:801:       Using fallback value 0 for y_sea_water_velocity for all profiles
+09:11:59 DEBUG   opendrift.models.basemodel.environment:801:       Using fallback value 2 for sea_water_temperature for all profiles
+09:11:59 DEBUG   opendrift.models.basemodel.environment:801:       Using fallback value 35 for sea_water_salinity for all profiles
+09:11:59 DEBUG   opendrift.models.basemodel.environment:898: ------------ SUMMARY -------------
+09:11:59 DEBUG   opendrift.models.basemodel.environment:900:     x_sea_water_velocity: 0 (min) 0 (max)
+09:11:59 DEBUG   opendrift.models.basemodel.environment:900:     y_sea_water_velocity: 0 (min) 0 (max)
+09:11:59 DEBUG   opendrift.models.basemodel.environment:900:     sea_floor_depth_below_sea_level: 10000 (min) 10000 (max)
+09:11:59 DEBUG   opendrift.models.basemodel.environment:900:     sea_surface_height: 0 (min) 0 (max)
+09:11:59 DEBUG   opendrift.models.basemodel.environment:900:     sea_surface_x_slope: 0 (min) 0 (max)
+09:11:59 DEBUG   opendrift.models.basemodel.environment:900:     sea_surface_y_slope: 0 (min) 0 (max)
+09:11:59 DEBUG   opendrift.models.basemodel.environment:900:     x_wind: 0 (min) 0 (max)
+09:11:59 DEBUG   opendrift.models.basemodel.environment:900:     y_wind: 0 (min) 0 (max)
+09:11:59 DEBUG   opendrift.models.basemodel.environment:900:     horizontal_diffusivity: 0 (min) 0 (max)
+09:11:59 DEBUG   opendrift.models.basemodel.environment:900:     sea_surface_wave_significant_height: 0 (min) 0 (max)
+09:11:59 DEBUG   opendrift.models.basemodel.environment:900:     sea_surface_wave_from_direction: 0 (min) 0 (max)
+09:11:59 DEBUG   opendrift.models.basemodel.environment:900:     sea_surface_wave_stokes_drift_x_velocity: 0 (min) 0 (max)
+09:11:59 DEBUG   opendrift.models.basemodel.environment:900:     sea_surface_wave_stokes_drift_y_velocity: 0 (min) 0 (max)
+09:11:59 DEBUG   opendrift.models.basemodel.environment:900:     sea_water_temperature: 2 (min) 2 (max)
+09:11:59 DEBUG   opendrift.models.basemodel.environment:900:     sea_water_salinity: 35 (min) 35 (max)
+09:11:59 DEBUG   opendrift.models.basemodel.environment:900:     sea_ice_area_fraction: 0 (min) 0 (max)
+09:11:59 DEBUG   opendrift.models.basemodel.environment:900:     sea_ice_thickness: 0 (min) 0 (max)
+09:11:59 DEBUG   opendrift.models.basemodel.environment:900:     sea_ice_x_velocity: 0 (min) 0 (max)
+09:11:59 DEBUG   opendrift.models.basemodel.environment:900:     sea_ice_y_velocity: 0 (min) 0 (max)
+09:11:59 DEBUG   opendrift.models.basemodel.environment:900:     land_binary_mask: 0 (min) 0 (max)
+09:11:59 DEBUG   opendrift.models.basemodel.environment:902: ---------------------------------
+09:11:59 DEBUG   opendrift.models.physics_methods:823: Calculating Hs from wind, min: 0.000000, mean: 0.000000, max: 0.000000
+09:11:59 WARNING opendrift.models.physics_methods:832: Setting wave direction equal to wind direction, min: 0.000000, mean: 0.000000, max: 0.000000
+09:11:59 DEBUG   opendrift:689: No elements hit coastline.
+09:11:59 DEBUG   opendrift:1732: No elements to deactivate
+09:11:59 DEBUG   opendrift:2193: Calling OpenBerg.update()
+09:11:59 DEBUG   opendrift.models.openberg:507: Advection with surface currents
+09:11:59 DEBUG   opendrift.models.openberg:573: No grounded icebergs detected in this timestep
+09:11:59 DEBUG   opendrift:1680: Horizontal diffusivity is 0, no random walk.
+09:11:59 DEBUG   opendrift:904: to be seeded: 0, already seeded 1
+09:11:59 DEBUG   opendrift:2135: ======================================================================
+09:11:59 INFO    opendrift:2136: 2023-09-10 21:36:00 - step 10 of 12 - 1 active elements (0 deactivated)
+09:11:59 DEBUG   opendrift:2142: 0 elements scheduled.
+09:11:59 DEBUG   opendrift:2144: ======================================================================
+09:11:59 DEBUG   opendrift:2153: 		latitude = 80.57939910888672
+09:11:59 DEBUG   opendrift:2153: 		longitude = 37.819149017333984
+09:11:59 DEBUG   opendrift:2153: 		z = 0.0
+09:11:59 DEBUG   opendrift:2156: ---------------------------------
+09:11:59 DEBUG   opendrift.models.basemodel.environment:599: ----------------------------------------
+09:11:59 DEBUG   opendrift.models.basemodel.environment:600: Variable group ['land_binary_mask']
+09:11:59 DEBUG   opendrift.models.basemodel.environment:601: ----------------------------------------
+09:11:59 DEBUG   opendrift.models.basemodel.environment:605: Calling reader global_landmask
+09:11:59 DEBUG   opendrift.models.basemodel.environment:606: ----------------------------------------
+09:11:59 DEBUG   opendrift.models.basemodel.environment:626: Data needed for 1 elements
+09:11:59 DEBUG   opendrift.readers.basereader.variables:761: Fetching variables from global_landmask covering 1 elements
+09:11:59 DEBUG   opendrift.readers.basereader.continuous:37: Fetched env-before
+09:11:59 DEBUG   opendrift.readers.basereader.variables:639: Checking land_binary_mask for invalid values
+09:11:59 DEBUG   opendrift.readers.basereader.variables:797: Reader projection is latlon - rotation of vectors is not needed.
+09:11:59 DEBUG   opendrift.models.basemodel.environment:762: Obtained data for all elements.
+09:11:59 DEBUG   opendrift.models.basemodel.environment:775: ---------------------------------------
+09:11:59 DEBUG   opendrift.models.basemodel.environment:776: Finished processing all variable groups
+09:11:59 DEBUG   opendrift.models.basemodel.environment:796: Creating empty dictionary for profiles not profided by any reader: ['x_sea_water_velocity', 'y_sea_water_velocity', 'sea_water_temperature', 'sea_water_salinity']
+09:11:59 DEBUG   opendrift.models.basemodel.environment:801:       Using fallback value 0 for x_sea_water_velocity for all profiles
+09:11:59 DEBUG   opendrift.models.basemodel.environment:801:       Using fallback value 0 for y_sea_water_velocity for all profiles
+09:11:59 DEBUG   opendrift.models.basemodel.environment:801:       Using fallback value 2 for sea_water_temperature for all profiles
+09:11:59 DEBUG   opendrift.models.basemodel.environment:801:       Using fallback value 35 for sea_water_salinity for all profiles
+09:11:59 DEBUG   opendrift.models.basemodel.environment:898: ------------ SUMMARY -------------
+09:11:59 DEBUG   opendrift.models.basemodel.environment:900:     x_sea_water_velocity: 0 (min) 0 (max)
+09:11:59 DEBUG   opendrift.models.basemodel.environment:900:     y_sea_water_velocity: 0 (min) 0 (max)
+09:11:59 DEBUG   opendrift.models.basemodel.environment:900:     sea_floor_depth_below_sea_level: 10000 (min) 10000 (max)
+09:11:59 DEBUG   opendrift.models.basemodel.environment:900:     sea_surface_height: 0 (min) 0 (max)
+09:11:59 DEBUG   opendrift.models.basemodel.environment:900:     sea_surface_x_slope: 0 (min) 0 (max)
+09:11:59 DEBUG   opendrift.models.basemodel.environment:900:     sea_surface_y_slope: 0 (min) 0 (max)
+09:11:59 DEBUG   opendrift.models.basemodel.environment:900:     x_wind: 0 (min) 0 (max)
+09:11:59 DEBUG   opendrift.models.basemodel.environment:900:     y_wind: 0 (min) 0 (max)
+09:11:59 DEBUG   opendrift.models.basemodel.environment:900:     horizontal_diffusivity: 0 (min) 0 (max)
+09:11:59 DEBUG   opendrift.models.basemodel.environment:900:     sea_surface_wave_significant_height: 0 (min) 0 (max)
+09:11:59 DEBUG   opendrift.models.basemodel.environment:900:     sea_surface_wave_from_direction: 0 (min) 0 (max)
+09:11:59 DEBUG   opendrift.models.basemodel.environment:900:     sea_surface_wave_stokes_drift_x_velocity: 0 (min) 0 (max)
+09:11:59 DEBUG   opendrift.models.basemodel.environment:900:     sea_surface_wave_stokes_drift_y_velocity: 0 (min) 0 (max)
+09:11:59 DEBUG   opendrift.models.basemodel.environment:900:     sea_water_temperature: 2 (min) 2 (max)
+09:11:59 DEBUG   opendrift.models.basemodel.environment:900:     sea_water_salinity: 35 (min) 35 (max)
+09:11:59 DEBUG   opendrift.models.basemodel.environment:900:     sea_ice_area_fraction: 0 (min) 0 (max)
+09:11:59 DEBUG   opendrift.models.basemodel.environment:900:     sea_ice_thickness: 0 (min) 0 (max)
+09:11:59 DEBUG   opendrift.models.basemodel.environment:900:     sea_ice_x_velocity: 0 (min) 0 (max)
+09:11:59 DEBUG   opendrift.models.basemodel.environment:900:     sea_ice_y_velocity: 0 (min) 0 (max)
+09:11:59 DEBUG   opendrift.models.basemodel.environment:900:     land_binary_mask: 0 (min) 0 (max)
+09:11:59 DEBUG   opendrift.models.basemodel.environment:902: ---------------------------------
+09:11:59 DEBUG   opendrift.models.physics_methods:823: Calculating Hs from wind, min: 0.000000, mean: 0.000000, max: 0.000000
+09:11:59 WARNING opendrift.models.physics_methods:832: Setting wave direction equal to wind direction, min: 0.000000, mean: 0.000000, max: 0.000000
+09:11:59 DEBUG   opendrift:689: No elements hit coastline.
+09:11:59 DEBUG   opendrift:1732: No elements to deactivate
+09:11:59 DEBUG   opendrift:2193: Calling OpenBerg.update()
+09:11:59 DEBUG   opendrift.models.openberg:507: Advection with surface currents
+09:11:59 DEBUG   opendrift.models.openberg:573: No grounded icebergs detected in this timestep
+09:11:59 DEBUG   opendrift:1680: Horizontal diffusivity is 0, no random walk.
+09:11:59 DEBUG   opendrift:904: to be seeded: 0, already seeded 1
+09:11:59 DEBUG   opendrift:2135: ======================================================================
+09:11:59 INFO    opendrift:2136: 2023-09-10 22:36:00 - step 11 of 12 - 1 active elements (0 deactivated)
+09:11:59 DEBUG   opendrift:2142: 0 elements scheduled.
+09:11:59 DEBUG   opendrift:2144: ======================================================================
+09:11:59 DEBUG   opendrift:2153: 		latitude = 80.57939910888672
+09:11:59 DEBUG   opendrift:2153: 		longitude = 37.819149017333984
+09:11:59 DEBUG   opendrift:2153: 		z = 0.0
+09:11:59 DEBUG   opendrift:2156: ---------------------------------
+09:11:59 DEBUG   opendrift.models.basemodel.environment:599: ----------------------------------------
+09:11:59 DEBUG   opendrift.models.basemodel.environment:600: Variable group ['land_binary_mask']
+09:11:59 DEBUG   opendrift.models.basemodel.environment:601: ----------------------------------------
+09:11:59 DEBUG   opendrift.models.basemodel.environment:605: Calling reader global_landmask
+09:11:59 DEBUG   opendrift.models.basemodel.environment:606: ----------------------------------------
+09:11:59 DEBUG   opendrift.models.basemodel.environment:626: Data needed for 1 elements
+09:11:59 DEBUG   opendrift.readers.basereader.variables:761: Fetching variables from global_landmask covering 1 elements
+09:11:59 DEBUG   opendrift.readers.basereader.continuous:37: Fetched env-before
+09:11:59 DEBUG   opendrift.readers.basereader.variables:639: Checking land_binary_mask for invalid values
+09:11:59 DEBUG   opendrift.readers.basereader.variables:797: Reader projection is latlon - rotation of vectors is not needed.
+09:11:59 DEBUG   opendrift.models.basemodel.environment:762: Obtained data for all elements.
+09:11:59 DEBUG   opendrift.models.basemodel.environment:775: ---------------------------------------
+09:11:59 DEBUG   opendrift.models.basemodel.environment:776: Finished processing all variable groups
+09:11:59 DEBUG   opendrift.models.basemodel.environment:796: Creating empty dictionary for profiles not profided by any reader: ['x_sea_water_velocity', 'y_sea_water_velocity', 'sea_water_temperature', 'sea_water_salinity']
+09:11:59 DEBUG   opendrift.models.basemodel.environment:801:       Using fallback value 0 for x_sea_water_velocity for all profiles
+09:11:59 DEBUG   opendrift.models.basemodel.environment:801:       Using fallback value 0 for y_sea_water_velocity for all profiles
+09:11:59 DEBUG   opendrift.models.basemodel.environment:801:       Using fallback value 2 for sea_water_temperature for all profiles
+09:11:59 DEBUG   opendrift.models.basemodel.environment:801:       Using fallback value 35 for sea_water_salinity for all profiles
+09:11:59 DEBUG   opendrift.models.basemodel.environment:898: ------------ SUMMARY -------------
+09:11:59 DEBUG   opendrift.models.basemodel.environment:900:     x_sea_water_velocity: 0 (min) 0 (max)
+09:11:59 DEBUG   opendrift.models.basemodel.environment:900:     y_sea_water_velocity: 0 (min) 0 (max)
+09:11:59 DEBUG   opendrift.models.basemodel.environment:900:     sea_floor_depth_below_sea_level: 10000 (min) 10000 (max)
+09:11:59 DEBUG   opendrift.models.basemodel.environment:900:     sea_surface_height: 0 (min) 0 (max)
+09:11:59 DEBUG   opendrift.models.basemodel.environment:900:     sea_surface_x_slope: 0 (min) 0 (max)
+09:11:59 DEBUG   opendrift.models.basemodel.environment:900:     sea_surface_y_slope: 0 (min) 0 (max)
+09:11:59 DEBUG   opendrift.models.basemodel.environment:900:     x_wind: 0 (min) 0 (max)
+09:11:59 DEBUG   opendrift.models.basemodel.environment:900:     y_wind: 0 (min) 0 (max)
+09:11:59 DEBUG   opendrift.models.basemodel.environment:900:     horizontal_diffusivity: 0 (min) 0 (max)
+09:11:59 DEBUG   opendrift.models.basemodel.environment:900:     sea_surface_wave_significant_height: 0 (min) 0 (max)
+09:11:59 DEBUG   opendrift.models.basemodel.environment:900:     sea_surface_wave_from_direction: 0 (min) 0 (max)
+09:11:59 DEBUG   opendrift.models.basemodel.environment:900:     sea_surface_wave_stokes_drift_x_velocity: 0 (min) 0 (max)
+09:11:59 DEBUG   opendrift.models.basemodel.environment:900:     sea_surface_wave_stokes_drift_y_velocity: 0 (min) 0 (max)
+09:11:59 DEBUG   opendrift.models.basemodel.environment:900:     sea_water_temperature: 2 (min) 2 (max)
+09:11:59 DEBUG   opendrift.models.basemodel.environment:900:     sea_water_salinity: 35 (min) 35 (max)
+09:11:59 DEBUG   opendrift.models.basemodel.environment:900:     sea_ice_area_fraction: 0 (min) 0 (max)
+09:11:59 DEBUG   opendrift.models.basemodel.environment:900:     sea_ice_thickness: 0 (min) 0 (max)
+09:11:59 DEBUG   opendrift.models.basemodel.environment:900:     sea_ice_x_velocity: 0 (min) 0 (max)
+09:11:59 DEBUG   opendrift.models.basemodel.environment:900:     sea_ice_y_velocity: 0 (min) 0 (max)
+09:11:59 DEBUG   opendrift.models.basemodel.environment:900:     land_binary_mask: 0 (min) 0 (max)
+09:11:59 DEBUG   opendrift.models.basemodel.environment:902: ---------------------------------
+09:11:59 DEBUG   opendrift.models.physics_methods:823: Calculating Hs from wind, min: 0.000000, mean: 0.000000, max: 0.000000
+09:11:59 WARNING opendrift.models.physics_methods:832: Setting wave direction equal to wind direction, min: 0.000000, mean: 0.000000, max: 0.000000
+09:11:59 DEBUG   opendrift:689: No elements hit coastline.
+09:11:59 DEBUG   opendrift:1732: No elements to deactivate
+09:11:59 DEBUG   opendrift:2193: Calling OpenBerg.update()
+09:11:59 DEBUG   opendrift.models.openberg:507: Advection with surface currents
+09:11:59 DEBUG   opendrift.models.openberg:573: No grounded icebergs detected in this timestep
+09:11:59 DEBUG   opendrift:1680: Horizontal diffusivity is 0, no random walk.
+09:11:59 DEBUG   opendrift:904: to be seeded: 0, already seeded 1
+09:11:59 DEBUG   opendrift:2135: ======================================================================
+09:11:59 INFO    opendrift:2136: 2023-09-10 23:36:00 - step 12 of 12 - 1 active elements (0 deactivated)
+09:11:59 DEBUG   opendrift:2142: 0 elements scheduled.
+09:11:59 DEBUG   opendrift:2144: ======================================================================
+09:11:59 DEBUG   opendrift:2153: 		latitude = 80.57939910888672
+09:11:59 DEBUG   opendrift:2153: 		longitude = 37.819149017333984
+09:11:59 DEBUG   opendrift:2153: 		z = 0.0
+09:11:59 DEBUG   opendrift:2156: ---------------------------------
+09:11:59 DEBUG   opendrift.models.basemodel.environment:599: ----------------------------------------
+09:11:59 DEBUG   opendrift.models.basemodel.environment:600: Variable group ['land_binary_mask']
+09:11:59 DEBUG   opendrift.models.basemodel.environment:601: ----------------------------------------
+09:11:59 DEBUG   opendrift.models.basemodel.environment:605: Calling reader global_landmask
+09:11:59 DEBUG   opendrift.models.basemodel.environment:606: ----------------------------------------
+09:11:59 DEBUG   opendrift.models.basemodel.environment:626: Data needed for 1 elements
+09:11:59 DEBUG   opendrift.readers.basereader.variables:761: Fetching variables from global_landmask covering 1 elements
+09:11:59 DEBUG   opendrift.readers.basereader.continuous:37: Fetched env-before
+09:11:59 DEBUG   opendrift.readers.basereader.variables:639: Checking land_binary_mask for invalid values
+09:11:59 DEBUG   opendrift.readers.basereader.variables:797: Reader projection is latlon - rotation of vectors is not needed.
+09:11:59 DEBUG   opendrift.models.basemodel.environment:762: Obtained data for all elements.
+09:11:59 DEBUG   opendrift.models.basemodel.environment:775: ---------------------------------------
+09:11:59 DEBUG   opendrift.models.basemodel.environment:776: Finished processing all variable groups
+09:11:59 DEBUG   opendrift.models.basemodel.environment:796: Creating empty dictionary for profiles not profided by any reader: ['x_sea_water_velocity', 'y_sea_water_velocity', 'sea_water_temperature', 'sea_water_salinity']
+09:11:59 DEBUG   opendrift.models.basemodel.environment:801:       Using fallback value 0 for x_sea_water_velocity for all profiles
+09:11:59 DEBUG   opendrift.models.basemodel.environment:801:       Using fallback value 0 for y_sea_water_velocity for all profiles
+09:11:59 DEBUG   opendrift.models.basemodel.environment:801:       Using fallback value 2 for sea_water_temperature for all profiles
+09:11:59 DEBUG   opendrift.models.basemodel.environment:801:       Using fallback value 35 for sea_water_salinity for all profiles
+09:11:59 DEBUG   opendrift.models.basemodel.environment:898: ------------ SUMMARY -------------
+09:11:59 DEBUG   opendrift.models.basemodel.environment:900:     x_sea_water_velocity: 0 (min) 0 (max)
+09:11:59 DEBUG   opendrift.models.basemodel.environment:900:     y_sea_water_velocity: 0 (min) 0 (max)
+09:11:59 DEBUG   opendrift.models.basemodel.environment:900:     sea_floor_depth_below_sea_level: 10000 (min) 10000 (max)
+09:11:59 DEBUG   opendrift.models.basemodel.environment:900:     sea_surface_height: 0 (min) 0 (max)
+09:11:59 DEBUG   opendrift.models.basemodel.environment:900:     sea_surface_x_slope: 0 (min) 0 (max)
+09:11:59 DEBUG   opendrift.models.basemodel.environment:900:     sea_surface_y_slope: 0 (min) 0 (max)
+09:11:59 DEBUG   opendrift.models.basemodel.environment:900:     x_wind: 0 (min) 0 (max)
+09:11:59 DEBUG   opendrift.models.basemodel.environment:900:     y_wind: 0 (min) 0 (max)
+09:11:59 DEBUG   opendrift.models.basemodel.environment:900:     horizontal_diffusivity: 0 (min) 0 (max)
+09:11:59 DEBUG   opendrift.models.basemodel.environment:900:     sea_surface_wave_significant_height: 0 (min) 0 (max)
+09:11:59 DEBUG   opendrift.models.basemodel.environment:900:     sea_surface_wave_from_direction: 0 (min) 0 (max)
+09:11:59 DEBUG   opendrift.models.basemodel.environment:900:     sea_surface_wave_stokes_drift_x_velocity: 0 (min) 0 (max)
+09:11:59 DEBUG   opendrift.models.basemodel.environment:900:     sea_surface_wave_stokes_drift_y_velocity: 0 (min) 0 (max)
+09:11:59 DEBUG   opendrift.models.basemodel.environment:900:     sea_water_temperature: 2 (min) 2 (max)
+09:11:59 DEBUG   opendrift.models.basemodel.environment:900:     sea_water_salinity: 35 (min) 35 (max)
+09:11:59 DEBUG   opendrift.models.basemodel.environment:900:     sea_ice_area_fraction: 0 (min) 0 (max)
+09:11:59 DEBUG   opendrift.models.basemodel.environment:900:     sea_ice_thickness: 0 (min) 0 (max)
+09:11:59 DEBUG   opendrift.models.basemodel.environment:900:     sea_ice_x_velocity: 0 (min) 0 (max)
+09:11:59 DEBUG   opendrift.models.basemodel.environment:900:     sea_ice_y_velocity: 0 (min) 0 (max)
+09:11:59 DEBUG   opendrift.models.basemodel.environment:900:     land_binary_mask: 0 (min) 0 (max)
+09:11:59 DEBUG   opendrift.models.basemodel.environment:902: ---------------------------------
+09:11:59 DEBUG   opendrift.models.physics_methods:823: Calculating Hs from wind, min: 0.000000, mean: 0.000000, max: 0.000000
+09:11:59 WARNING opendrift.models.physics_methods:832: Setting wave direction equal to wind direction, min: 0.000000, mean: 0.000000, max: 0.000000
+09:11:59 DEBUG   opendrift:689: No elements hit coastline.
+09:11:59 DEBUG   opendrift:1732: No elements to deactivate
+09:11:59 DEBUG   opendrift:2193: Calling OpenBerg.update()
+09:11:59 DEBUG   opendrift.models.openberg:507: Advection with surface currents
+09:11:59 DEBUG   opendrift.models.openberg:573: No grounded icebergs detected in this timestep
+09:11:59 DEBUG   opendrift:1680: Horizontal diffusivity is 0, no random walk.
+09:11:59 DEBUG   opendrift:2231: Cleaning up
+09:11:59 DEBUG   opendrift.models.basemodel.environment:599: ----------------------------------------
+09:11:59 DEBUG   opendrift.models.basemodel.environment:600: Variable group ['land_binary_mask']
+09:11:59 DEBUG   opendrift.models.basemodel.environment:601: ----------------------------------------
+09:11:59 DEBUG   opendrift.models.basemodel.environment:605: Calling reader global_landmask
+09:11:59 DEBUG   opendrift.models.basemodel.environment:606: ----------------------------------------
+09:11:59 DEBUG   opendrift.models.basemodel.environment:626: Data needed for 1 elements
+09:11:59 DEBUG   opendrift.readers.basereader.variables:761: Fetching variables from global_landmask covering 1 elements
+09:11:59 DEBUG   opendrift.readers.basereader.continuous:37: Fetched env-before
+09:11:59 DEBUG   opendrift.readers.basereader.variables:639: Checking land_binary_mask for invalid values
+09:11:59 DEBUG   opendrift.readers.basereader.variables:797: Reader projection is latlon - rotation of vectors is not needed.
+09:11:59 DEBUG   opendrift.models.basemodel.environment:762: Obtained data for all elements.
+09:11:59 DEBUG   opendrift.models.basemodel.environment:775: ---------------------------------------
+09:11:59 DEBUG   opendrift.models.basemodel.environment:776: Finished processing all variable groups
+09:11:59 DEBUG   opendrift.models.basemodel.environment:898: ------------ SUMMARY -------------
+09:11:59 DEBUG   opendrift.models.basemodel.environment:900:     land_binary_mask: 0 (min) 0 (max)
+09:11:59 DEBUG   opendrift.models.basemodel.environment:902: ---------------------------------
+09:11:59 DEBUG   opendrift:689: No elements hit coastline.
+09:11:59 DEBUG   opendrift:2318: Updating minval and maxval
+09:11:59 DEBUG   opendrift:2398: Writing to file
+09:11:59 DEBUG   opendrift:1732: No elements to deactivate
+09:11:59 DEBUG   opendrift:164: Changed mode from Mode.Run to Mode.Result
+09:11:59 INFO    opendrift:53: Performing checks..
+09:11:59 INFO    opendrift:70: Checks done.
